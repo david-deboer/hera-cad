@@ -1,0 +1,70 @@
+\documentclass[11pt]{article}
+%\usepackage{abbrevs}
+\usepackage{natbib}
+\usepackage{hyperref}
+\usepackage{float}
+\usepackage[pdftex]{graphicx}     % could insert ``draft'' between []
+\pagestyle{empty}
+
+\setlength{\oddsidemargin}{0pt} % there is 1 inch before the
+                                % side margin in ``article'' class
+\setlength{\textwidth}{6.5in}
+
+\setlength{\voffset}{0pt}
+\setlength{\topmargin}{-0.75in}     % there is 1 inch before the
+                                % top margin in ``article'' class and
+                                % then room for header, etc.
+\setlength{\textheight}{10.0in}
+%%%%%%%%%%%
+
+\newcommand{\inch}{$^{\prime\prime}$}
+\newcommand{\foot}{$^{\prime}$}
+\renewcommand{\deg}{^\circ}
+
+\begin{document}
+\title{HERA Installation Procedure}
+\author{David DeBoer}
+\maketitle
+
+\setcounter{tocdepth}{3}
+\tableofcontents
+
+\section{Pole Installation}
+After surveying the entire plat, the poles are installed on center with a $\pm$10cm tolerance, per Figure \ref{fig:poles}.  The number of rows and poles per row is set by the hex order.  Table \ref{tab:hexnums} shows important numbers for different orders.
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{graphics/bigPoles.png}
+\label{fig:poles}
+\caption{Layout of poles.  Dimensions in meters.}
+\end{figure}
+
+\begin{table}[H]
+\centering
+\caption{Numbers}.
+\begin{tabular}{| l | l |} \hline
+order & total number \\ \hline
+4 & x \\ \hline
+\end{tabular}
+\label{tab:hexnums}
+\end{table}
+
+\section{Pole Height}
+Each trio of poles supports an antenna.  A fiducial constant height must be measured for each trio and marked with a small eye-bolt.  From within the circle circumscribed by the poles, this height may be measured by a theodolite along a bubble-level line or by a total station at constant $z$.  This height should be about 1.5-meters above the ground.
+\begin{figure}[H]
+\includegraphics[width=\textwidth]{graphics/poles_and_ants.png}
+\label{fig:poles_ants}
+\caption{Layout of poles.  Dimensions in meters.}
+\end{figure}
+
+\section{Hub Centering and Leveling}
+With each pole with a constant height eye-bolt, the following is used to center the hub center:
+\subsection{Radial lines}
+A arrangement of three fixed length lines and three match spring attached on a small inner ring with a plumb-bob is used. See Figure refPicture.
+
+\subsection{Jig}
+With the center point defined by the radial lines and hanging bob, a jig as described below is used.
+
+
+\bibliographystyle{plainnat}
+\bibliography{YOUR BIBLIOGRAPHY HERE}
+\end{document}
