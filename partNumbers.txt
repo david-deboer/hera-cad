@@ -1,0 +1,13 @@
+Level 0:  purchased parts
+Level 1:  array
+	1e:  element
+	1j:  jigs
+		1jhub:  hub jig
+Level 2:  element
+	2h:  hub
+	2p:  support
+	2r:  surface
+	2f:  feed
+	2e:  metal end-piece for poles/posts
+Level 3:  node
+	3s:  SNAP board
