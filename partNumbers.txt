@@ -4,10 +4,27 @@ Level 1:  array
 	1j:  jigs
 		1jhub:  hub jig
 Level 2:  element
-	2h:  hub
-	2p:  support
-	2r:  surface
 	2f:  feed
-	2e:  metal end-piece for poles/posts
+		2f1:  dipole/mast
+		2f2:  backplane
+		2f3:  central rope/lna
+	2h:  hub
+		2h1:  sonotube
+		2h2:  conduit/sleeves
+		2h3:  rebar
+		2h4:  cement
+	2p:  support
+		2p1:  end assembly
+		2p2:  pole assembly
+		2p3:  post assembly
+		2p4:  rim assembly
+		2p5:  horizontal spar assembly
+		2p6:  other (furring)
+	2r:  surface
+		2r1:  spars (full and intermediate)
+		2r2:  cross support
+		2r3:  surface panels
+		2r4:  screen
+		2r5:  splash cone
 Level 3:  node
 	3s:  SNAP board
