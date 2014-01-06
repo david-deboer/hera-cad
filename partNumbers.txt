@@ -1,30 +1,67 @@
-Level 0:  purchased parts
-Level 1:  array
-	1e:  element
-	1j:  jigs
-		1jhub:  hub jig
-Level 2:  element
-	2f:  feed
-		2f1:  dipole/mast
-		2f2:  backplane
-		2f3:  central rope/lna
-	2h:  hub
-		2h1:  sonotube
-		2h2:  conduit/sleeves
-		2h3:  rebar
-		2h4:  cement
-	2p:  support
-		2p1:  end assembly
-		2p2:  pole assembly
-		2p3:  post assembly
-		2p4:  rim assembly
-		2p5:  horizontal spar assembly
-		2p6:  other (furring)
-	2r:  surface
-		2r1:  spars (full and intermediate)
-		2r2:  cross support
-		2r3:  surface panels
-		2r4:  screen
-		2r5:  splash cone
-Level 3:  node
-	3s:  SNAP board
+Prefix H0:  purchased parts
+
+Prefix H1:  array-wide support	
+	H1j:  jigs
+
+		H1jhub:  hub jig
+		H1jcen:  hub centering
+	H1s:  survey equipment
+		H1sts:  total station
+Prefix H2:  element
+
+	H2f:  feed
+
+		H2f1:  dipole/mast
+
+		H2f2:  backplane
+
+		H2f3:  central rope/lna
+
+	H2h:  hub
+
+		H2h1:  sonotube
+
+		H2h2:  conduit/sleeves
+
+		H2h3:  rebar
+
+		H2h4:  cement
+
+	H2p:  support
+
+		H2p1:  end assembly
+
+		H2p2:  pole assembly
+
+		H2p3:  post assembly
+
+		H2p4:  rim assembly
+
+		H2p5:  horizontal spar assembly
+
+		H2p6:  other (furring)
+
+	H2r:  surface
+
+		H2r1:  spars (full and intermediate)
+
+		H2r2:  cross support
+
+		H2r3:  surface panels
+
+		H2r4:  screen
+
+		H2r5:  splash cone
+
+Prefix H3:  node
+
+	H3s:  SNAP board
+
+Prefix H4:  central
+	H4s:  switch
+	H4t:  timing
+		H4tgps:  gps
+		H4tclk:  clock
+Prefix H5:  infrastructure
+Prefix H6:  distributed
+ 
