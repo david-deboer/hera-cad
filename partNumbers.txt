@@ -1,39 +1,49 @@
-Prefix H0:  purchased parts
-Prefix H1:  array-wide support	
-	H1j:  jigs
-		H1jhub:  hub jig
-		H1jcen:  hub centering
-	H1s:  survey equipment
-		H1sts:  total station
-Prefix H2:  element
+Prefix H1:  Element
+	H10:  purchased parts
+	H1h:  hub
+		H1h1:  sonotube
+		H1h2:  conduit/sleeves
+		H1h3:  rebar
+		H1h4:  cement
+	H1p:  support
+		H1p1:  end assembly
+		H1p2:  pole assembly
+		H1p3:  post assembly
+		H1p4:  rim assembly
+		H1p5:  horizontal spar assembly
+		H1p6:  other (furring)
+	H1r:  surface
+		H1r1:  spars (full and intermediate)
+		H1r2:  cross support
+		H1r3:  surface panels
+		H1r4:  screen
+		H1r5:  splash cone
+Prefix H2:  Frontend
+	H20:  purchased parts
 	H2f:  feed
 		H2f1:  dipole/mast
 		H2f2:  backplane
 		H2f3:  central rope/lna
-	H2h:  hub
-		H2h1:  sonotube
-		H2h2:  conduit/sleeves
-		H2h3:  rebar
-		H2h4:  cement
-	H2p:  support
-		H2p1:  end assembly
-		H2p2:  pole assembly
-		H2p3:  post assembly
-		H2p4:  rim assembly
-		H2p5:  horizontal spar assembly
-		H2p6:  other (furring)
-	H2r:  surface
-		H2r1:  spars (full and intermediate)
-		H2r2:  cross support
-		H2r3:  surface panels
-		H2r4:  screen
-		H2r5:  splash cone
-Prefix H3:  node
+Prefix H3:  Node
+	H30:  purchased parts
 	H3s:  SNAP board
-Prefix H4:  central
-	H4s:  switch
+Prefix H4:  Container
+	H40:  purchased parts
+	H4f:  fiber
 	H4t:  timing
 		H4tgps:  gps
 		H4tclk:  clock
-Prefix H5:  infrastructure
-Prefix H6:  distributed
+	H4p:  power
+Prefix H5:  KAPB
+	H50:  purchased parts
+	H5s:  switch
+	H5g:  processor
+	H5n:  network
+	H5p:  power
+Prefix H6:  Computing
+Prefix H7:  Array-wide support	
+	H7j:  jigs
+		H7jhub:  hub jig
+		H7jcen:  hub centering
+	H7s:  survey equipment
+		H7sts:  total station
