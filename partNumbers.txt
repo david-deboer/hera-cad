@@ -1,13 +1,49 @@
-Level 0:  purchased parts
-Level 1:  array
-	1e:  element
-	1j:  jigs
-		1jhub:  hub jig
-Level 2:  element
-	2h:  hub
-	2p:  support
-	2r:  surface
-	2f:  feed
-	2e:  metal end-piece for poles/posts
-Level 3:  node
-	3s:  SNAP board
+Prefix H1:  Element
+	H10:  purchased parts
+	H1h:  hub
+		H1h1:  sonotube
+		H1h2:  conduit/sleeves
+		H1h3:  rebar
+		H1h4:  cement
+	H1p:  support
+		H1p1:  end assembly
+		H1p2:  pole assembly
+		H1p3:  post assembly
+		H1p4:  rim assembly
+		H1p5:  horizontal spar assembly
+		H1p6:  other (furring)
+	H1r:  surface
+		H1r1:  spars (full and intermediate)
+		H1r2:  cross support
+		H1r3:  surface panels
+		H1r4:  screen
+		H1r5:  splash cone
+Prefix H2:  Frontend
+	H20:  purchased parts
+	H2f:  feed
+		H2f1:  dipole/mast
+		H2f2:  backplane
+		H2f3:  central rope/lna
+Prefix H3:  Node
+	H30:  purchased parts
+	H3s:  SNAP board
+Prefix H4:  Container
+	H40:  purchased parts
+	H4f:  fiber
+	H4t:  timing
+		H4tgps:  gps
+		H4tclk:  clock
+	H4p:  power
+Prefix H5:  KAPB
+	H50:  purchased parts
+	H5s:  switch
+	H5g:  processor
+	H5n:  network
+	H5p:  power
+Prefix H6:  Computing
+Prefix H7:  Array-wide support	
+	H7j:  jigs
+		H7jhub:  hub jig
+		H7jcen:  hub centering
+	H7s:  survey equipment
+		H7sts:  total station

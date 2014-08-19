@@ -1,1 +1,8 @@
+*.aux
+*.gz
+*.log
+*.out
+*.bbl
+*.toc
 OldVersions
+
