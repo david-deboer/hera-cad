@@ -4,6 +4,8 @@
 \usepackage{hyperref}
 \usepackage{float}
 \usepackage[pdftex]{graphicx}     % could insert ``draft'' between []
+\usepackage{stmaryrd}
+\usepackage{appendix}
 \pagestyle{empty}
 
 \setlength{\oddsidemargin}{0pt} % there is 1 inch before the
@@ -49,7 +51,7 @@ order & total number \\ \hline
 \end{table}
 
 \section{Pole Height}
-Each trio of poles supports an antenna.  A fiducial constant height must be measured for each trio and marked with a small eye-bolt.  From within the circle circumscribed by the poles, this height may be measured by a theodolite along a bubble-level line or by a total station at constant $z$.  This height should be about 1.5-meters above the ground.
+Each trio of poles supports an antenna and each interior pole is shared by three antennas.  A fiducial constant height must be measured for each trio and marked with a small eye-bolt.  From within the circle circumscribed by the poles, this height may be measured by a theodolite along a bubble-level line or by a total station at constant $z$.  This height should be about 1.5-meters above the ground.
 \begin{figure}[H]
 \includegraphics[width=\textwidth]{graphics/poles_and_ants.png}
 \label{fig:poles_ants}
@@ -64,6 +66,25 @@ A arrangement of three fixed length lines and three match spring attached on a s
 \subsection{Jig}
 With the center point defined by the radial lines and hanging bob, a jig as described below is used.
 
+\newpage
+\appendix
+\section{Checklist}
+
+\renewcommand{\labelitemi}{$\boxempty$}
+\begin{itemize}
+\item Install poles
+\item Survey pole marker fiducial height ($\approx$ 1.5m) and install eye-bolt
+\item Install centering jig (H7jcen)
+\item Install hub forms with hub jig (H7jhub), using H7jcen to center
+\item Rotate hub to point to poles and exit to correct direction
+\item Level with H7jhub and stakes
+\item Install hub sleeves (top, bottom and exit) and rebar
+\item Pour concrete and let set
+\item Mark center point on rebar with cable tie and remove jigs
+\item Set-up Total Station on center and YYcm above rebar
+\item Survey and install pole vertical assembly (H1p2v):  bottom at z=ZZZcm
+
+\end{itemize}
 
 \bibliographystyle{plainnat}
 \bibliography{YOUR BIBLIOGRAPHY HERE}
