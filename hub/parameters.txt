@@ -1,0 +1,10 @@
+hubOuterDiam - nominal outer diameter of hub ring
+	36 in
+hubInnerDiam - nominal inner diameter of hub ring
+	18 in
+hubRingThickness - thickness of the sheet used for the ring
+	0.06 in
+sleeveOD - outer diameter of the pvc sleeve
+	90 mm
+sparOD - outer diameter of the pvc spar
+	63 mm

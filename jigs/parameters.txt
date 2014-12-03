@@ -1,0 +1,10 @@
+see parameters.txt under hub
+hubAngleThickness - thickness of the angle used to make the hub jig
+	0.1 in
+hubAngleWidth1 - width of face of angle used to make hub jig dim 1
+	1.0 in
+hubAngleWidth2 - width of face of angle used to make hub jig dim 2
+	1.0 in
+hubCentralHoleOffset - offset of central hole from edge of angle
+	0.5 in
+
