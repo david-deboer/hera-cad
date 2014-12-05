@@ -6,6 +6,8 @@ hubRingThickness - thickness of the sheet used for the ring
 	0.06 in
 sleeveOD - outer diameter of the pvc sleeve
 	90 mm
+sleeveWall - wall thickness
+	5.1 mm (class 12)
 sparOD - outer diameter of the pvc spar
 	63 mm
 olap1 - ring overlap for outer, side without conduit
