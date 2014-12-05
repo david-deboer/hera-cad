@@ -8,3 +8,21 @@ sleeveOD - outer diameter of the pvc sleeve
 	90 mm
 sparOD - outer diameter of the pvc spar
 	63 mm
+olap1 - ring overlap for outer, side without conduit
+	2.5 in
+olap2 - ring overlap for outer, side with conduit
+        sparOD + 1in
+bendingShortchange - how much short the bent version is for outer (mainly to get the rivets)
+	0.2 in
+sparSpace - spacing between spars on outer ring (should scale with bendingShortChange...)
+	pi*hubOuterDiam/12 
+rivetSize - size of rivet hole
+	1 mm
+
+NOTE:  To get the hub rings drawn.
+	1 - put in all rivets except one side's overlap rivets
+	2 - set that side's olap to 0
+	3 - make assembly and add mirror, using the 0 olap side as plane
+	4 - go back to part and add the olap back in and add last rivets
+
+
