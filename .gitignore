@@ -3,4 +3,5 @@
 *.log
 *.toc
 *.gz
+*.lck
 OldVersions
