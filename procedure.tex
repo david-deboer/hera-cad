@@ -29,42 +29,74 @@
 \maketitle
 
 \setcounter{tocdepth}{3}
+\setcounter{section}{0}
 \tableofcontents
 
-\section{Pole Installation}
-After surveying the entire plat, the poles are installed on center with a $\pm$10cm tolerance, per Figure \ref{fig:poles}.  The number of rows and poles per row is set by the hex order.  Table \ref{tab:hexnums} shows important numbers for different orders.
+\section{Overview}
+HERA element installation proceeds along the following broad lines:
+
+\begin{enumerate}
+\item Setting the poles
+\item Setting the hub
+\item Setting the rim
+\item Setting the spars
+\item Setting the surface
+\item Setting the feed
+\end{enumerate}
+
+\section{Setting the Poles}
+After surveying the entire plat, the poles are installed on center with a $\pm$10cm tolerance from the surveyed locations.  The procurement and installation of the poles will be done by contractors.  The specifications are outlined in a separate document.
+
+Each trio of poles supports an antenna and each interior pole is shared by three antennas.  A small eye-bolt at a fiducial height must be installed for each trio according to Procedure P-1.
+
+\vspace{0.5cm}
+\underline{\textbf{Procedure P-1}}
+\begin{enumerate}
+\item identify the three poles to be used by the element
+\item set up the instrument at the approximate center (total station, theodolite, laser level)
+\item measure a fixed height approximately 1.5m above ground level (set to horizontal level, or fixed $z$ with total station)
+\item install a small eye-bolt at the closest radial point from the center and pointed to the center
+\end{enumerate}
+
+\section{Setting the Hub}
+Using the centering jig and the installed eye-bolts, the following pieces are used as the hub and to center the hub.  Figure \ref{fig:centeredHub} shows the hub as set prior to being filled with concrete and Figure \ref{fig:centeredHubDrawing} shows a drawing of the South African versions (albeit with some redesign of the hub jig).
+
+\begin{enumerate}
+\item hub outer ring:  this consists of two pieces of approximately 250mm $\times$ 1600mm pieces rolled to a 1m diameter and riveted together to form a circle.
+\item hub inner ring:  this consists of one piece of approximately 250mm $\times$ 1500mm rolled to a 0.5m diameter and riveted to itself to form a circle.
+\item support spars:  qty 12 ???64mm??? by ???3m??? PVC pipes. (OD matters here, to fit in jig and mate with other pieces).
+\item spar sleeves:  qty 12 ???75mm??? by 300mm PVC pipes.  (ID matters here to get the correct angle.  OD matters to fit into jig.)
+\item centering jig: consists of three fixed length lines and three match spring attached on a small inner ring with a plumb-bob.
+\item hub jig holds the two rings to be concentric and provides surfaces and support to center under the centering jig and level
+\item ???700mm??? length of ???1cm??? rebar rod
+\item nails:  qty 24, inserted into holes in the supports and sleeves to help constrain them.
+\end{enumerate}
+
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{graphics/bigPoles.png}
-\label{fig:poles}
-\caption{Layout of poles.  Dimensions in meters.}
+\includegraphics[width=0.8\textwidth]{graphics/hubCentering.jpg}
+\caption{This figure shows the pieces as listed as implemented at Green Bank.  Note that in the US, the hub rings are cardboard tube and the hub jig is wood.}
+\label{fig:centeredHub}
 \end{figure}
 
-\begin{table}[H]
-\centering
-\caption{Numbers}.
-\begin{tabular}{| l | l |} \hline
-order & total number \\ \hline
-4 & x \\ \hline
-\end{tabular}
-\label{tab:hexnums}
-\end{table}
-
-\section{Pole Height}
-Each trio of poles supports an antenna and each interior pole is shared by three antennas.  A fiducial constant height must be measured for each trio and marked with a small eye-bolt.  From within the circle circumscribed by the poles, this height may be measured by a theodolite along a bubble-level line or by a total station at constant $z$.  This height should be about 1.5-meters above the ground.
 \begin{figure}[H]
-\includegraphics[width=\textwidth]{graphics/poles_and_ants.png}
-\label{fig:poles_ants}
-\caption{Layout of poles.  Dimensions in meters.}
+\centering
+\includegraphics[width=1.0\textwidth]{jigs/hubRingJig_withHub.pdf}
+\caption{This drawing shows the pieces as listed for South Africa, note that the sleeves and spars are not shown here, as they would normally be in this configuration.}
+\label{fig:centeredHubDrawing}
 \end{figure}
 
-\section{Hub Centering and Leveling}
-With each pole with a constant height eye-bolt, the following is used to center the hub center:
-\subsection{Radial lines}
-A arrangement of three fixed length lines and three match spring attached on a small inner ring with a plumb-bob is used. See Figure refPicture.
+The following procedure is used:
 
-\subsection{Jig}
-With the center point defined by the radial lines and hanging bob, a jig as described below is used.
+\begin{enumerate}
+\item a ???2mm??? hole is drilled through the support spars and sleeves at a distance of ???80mm??? from the end.
+\item the centering jig is clipped onto the three eye-bolts, then onto the center ring to define the actual center of the element.  A plumb-bob hangs down to accurately place the hub.
+\item the two rings are concentrically placed within the hub jig and the support spars and sleeves are inserted
+\item the constraining nails are inserted into the PVC and arranged to be flush with the inner ring (within the concentric ring)
+\item the rebar is inserted through the small holes at the top of the inner ring and centered
+\item the assembly is accurately (within 1cm) centered underneath the centering jig and leveled in perpendicular directions
+\item the interior of the concentric ring (the ``doughnut'') is filled to the top with cement and allowed to set
+\end{enumerate}
 
 \newpage
 \appendix
