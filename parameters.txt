@@ -1,3 +1,11 @@
+focal
+	4.5 m
+diameter
+	14 m
+sparOD
+	63 mm
+sparWall - PVC/U class 12 (need to double-check)
+	3.1 mm
 hubOuterDiam - nominal outer diameter of hub ring
 	36 in
 hubInnerDiam - nominal inner diameter of hub ring
@@ -7,7 +15,11 @@ hubRingThickness - thickness of the sheet used for the ring
 sleeveOD - outer diameter of the pvc sleeve
 	90 mm
 sleeveWall - wall thickness
-	5.1 mm (class 12)
+	3.9 mm (U class 9)
+sleeveLength - length of sleeve in hub (PVC/U 90mm class 9)
+	37.7 cm
+nailDelta - position of nail from sleeve end
+	2 cm
 sparOD - outer diameter of the pvc spar
 	63 mm
 olap1 - ring overlap for outer, side without conduit
@@ -20,6 +32,15 @@ sparSpace - spacing between spars on outer ring (should scale with bendingShortC
 	pi*hubOuterDiam/12 
 rivetSize - size of rivet hole
 	1 mm
+hubAngleThickness - thickness of the angle used to make the hub jig
+	3 mm
+hubAngleWidth1 - width of face of angle used to make hub jig dim 1
+	1.0 in
+hubAngleWidth2 - width of face of angle used to make hub jig dim 2
+	1.0 in
+hubCentralHoleOffset - offset of central hole from edge of angle
+	0.5 in
+
 
 NOTE:  To get the hub rings drawn.
 	1 - put in all rivets except one side's overlap rivets
