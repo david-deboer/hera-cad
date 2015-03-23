@@ -1,11 +1,13 @@
-focal
+focal length
 	4.5 m
-diameter
+diameter of dish
 	14 m
-sparOD
+sparOD (outer diameter of the PVC used for the spars)
 	63 mm
 sparWall - PVC/U class 12 (need to double-check)
 	3.1 mm
+
+#####HUB#####
 hubOuterDiam - nominal outer diameter of hub ring
 	36 in
 hubInnerDiam - nominal inner diameter of hub ring
@@ -20,8 +22,6 @@ sleeveLength - length of sleeve in hub (PVC/U 90mm class 9)
 	37.7 cm
 nailDelta - position of nail from sleeve end
 	2 cm
-sparOD - outer diameter of the pvc spar
-	63 mm
 olap1 - ring overlap for outer, side without conduit
 	2.5 in
 olap2 - ring overlap for outer, side with conduit
@@ -40,7 +40,8 @@ hubAngleWidth2 - width of face of angle used to make hub jig dim 2
 	1.0 in
 hubCentralHoleOffset - offset of central hole from edge of angle
 	0.5 in
-
+sparLaunchAngle - angle needed to "launch" the long pvc spar correctly (see pg 12 in notebook)
+	3.72deg
 
 NOTE:  To get the hub rings drawn.
 	1 - put in all rivets except one side's overlap rivets
