@@ -1,23 +1,40 @@
+H[0-7]{[a-z,0-9][a-z,0-9]}.{[a-z][0-9]...}{_[f,p,s,c][1-N]}
+	... nested as needed
+	_f/p/s/c/1
+		full - view(s) of a full assembly
+		partial - partial view(s) of an assembly
+		single - single part
+		complete - complete package with assemblies, sub-assemblies and parts
+		1-N - number of pages
+
+Prefix H0:  Explanatory document
 Prefix H1:  Element
 	H10:  purchased parts
 	H1h:  hub
-		H1h1:  sonotube
-		H1h2:  conduit/sleeves
-		H1h3:  rebar
-		H1h4:  cement
+		H1hi:  inner rim ring
+		H1ho:  outer rim ring
+			.1
+			.2
+		H1hs:  spar sleeves
+		H1hu:  support spars
+		H1hc:  cement
 	H1p:  support
-		H1p1:  end assembly
-		H1p2:  pole assembly
-		H1p3:  post assembly
-		H1p4:  rim assembly
-		H1p5:  horizontal spar assembly
-		H1p6:  other (furring)
+		H1pe:  endcap
+			.l
+			.r
+		H1pl:  pole assembly
+		H1ps:  post assembly
+		H1pr:  rim assembly
+		H1p:   assembly
+		H1po:  overlap strips
+			.2 shortest
+			.3 middle
+			.4 longest
 	H1r:  surface
-		H1r1:  spars (full and intermediate)
-		H1r2:  cross support
-		H1r3:  surface panels
-		H1r4:  screen
-		H1r5:  splash cone
+		H1rf:  full spars
+		H1ri:  intermediate spars
+		H1rc:  cross spar assembly
+		H1rs:  surface panels
 Prefix H2:  Frontend
 	H20:  purchased parts
 	H2f:  feed
