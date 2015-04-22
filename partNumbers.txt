@@ -25,6 +25,8 @@ Prefix H1:  Element
 		H1pl:  pole assembly
 		H1ps:  post assembly
 		H1pr:  rim assembly
+			.h long horizontal piece
+			.s spar holder
 		H1p:   assembly
 		H1po:  overlap strips
 			.2 shortest
