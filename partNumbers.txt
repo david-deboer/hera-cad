@@ -32,7 +32,10 @@ Prefix H1:  Element
 			.h horizontal assembly
 		H1ps:  post assembly
 		H1pr:  rim assembly
+			.h long horizontal piece
+			.s spar holder
 		H1pv:  vertical support assembly
+		H1p:   assembly
 		H1po:  overlap strips
 			.2 shortest
 			.3 middle
