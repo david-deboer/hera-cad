@@ -70,7 +70,13 @@ Prefix H5:  KAPB
 Prefix H6:  Computing
 Prefix H7:  Array-wide support	
 	H7j:  jigs
-		.h  hub jig
-		.c  hub centering
+		H7jh:  hub jig
+		H7jc:  hub centering
+		H7jp:  panel frames
+			.A panel A
+			.B panel B
+			.C panel C
+			.D panel D
+			.E panel E
 	H7s:  survey equipment
 		.t  total station
