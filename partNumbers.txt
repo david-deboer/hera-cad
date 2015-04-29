@@ -1,11 +1,16 @@
-H[0-7]{[a-z,0-9][a-z,0-9]}.{[a-z][0-9]...}{_[f,p,s,c][1-N]}
+H[0-7]{[aA-zZ,0-9][aA-zZ,0-9]}.{[aA-zZ][0-9]…}{_}{[U,S]}{[f,p,s,m,c]}{[a-z]}{[A-Z]}{[1-N]}{-description}
 	... nested as needed
-	_f/p/s/c/1
+	U,S	US or SA version (same for both if not present)
+	f/p/s/m/c/1
 		full - view(s) of a full assembly
 		partial - partial view(s) of an assembly
 		single - single part
+		multiple - multiple parts
 		complete - complete package with assemblies, sub-assemblies and parts
-		1-N - number of pages
+	a-z	view counter
+	1-N	number of pages (for pdf)
+	A-Z	revision number (exclude S and U)
+	description (typically the filename)
 
 Prefix H0:  Explanatory document
 Prefix H1:  Element
@@ -13,18 +18,23 @@ Prefix H1:  Element
 	H1h:  hub
 		H1hi:  inner rim ring
 		H1ho:  outer rim ring
-			.1
-			.2
+			.1 original
+			.2 mirror image
 		H1hs:  spar sleeves
 		H1hu:  support spars
 		H1hc:  cement
 	H1p:  support
 		H1pe:  endcap
-			.l
-			.r
+			.l left
+			.r right (mirror)
 		H1pl:  pole assembly
+			.v vertical assembly
+			.h horizontal assembly
 		H1ps:  post assembly
 		H1pr:  rim assembly
+			.h long horizontal piece
+			.s spar holder
+		H1pv:  vertical support assembly
 		H1p:   assembly
 		H1po:  overlap strips
 			.2 shortest
@@ -48,8 +58,8 @@ Prefix H4:  Container
 	H40:  purchased parts
 	H4f:  fiber
 	H4t:  timing
-		H4tgps:  gps
-		H4tclk:  clock
+		.g  gps
+		.c  clock
 	H4p:  power
 Prefix H5:  KAPB
 	H50:  purchased parts
@@ -60,7 +70,13 @@ Prefix H5:  KAPB
 Prefix H6:  Computing
 Prefix H7:  Array-wide support	
 	H7j:  jigs
-		H7jhub:  hub jig
-		H7jcen:  hub centering
+		H7jh:  hub jig
+		H7jc:  hub centering
+		H7jp:  panel frames
+			.A panel A
+			.B panel B
+			.C panel C
+			.D panel D
+			.E panel E
 	H7s:  survey equipment
-		H7sts:  total station
+		.t  total station
