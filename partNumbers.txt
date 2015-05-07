@@ -47,10 +47,22 @@ Prefix H1:  Element
 		H1rs:  surface panels
 Prefix H2:  Frontend
 	H20:  purchased parts
-	H2f:  feed
-		H2f1:  dipole/mast
-		H2f2:  backplane
-		H2f3:  central rope/lna
+		eyebolt
+	H2c:  collar
+	H2b:  backplane
+		H2bm:  mechanical backplane
+			.p  circular plate (disc)
+			.l  long piece 
+			.i  intermediate piece
+			.s  short piece
+		H2bs:  surface (mesh/pvc)
+	H2d:  dipole
+		H2dt:  top disc
+		H2db:  bottom disc
+	H2l:  lna and support
+	H2s:  support (central rope, springs, )
+	H2c:  coaxial cable
+	H2p:  power cable
 Prefix H3:  Node
 	H30:  purchased parts
 	H3s:  SNAP board
