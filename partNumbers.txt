@@ -1,4 +1,4 @@
-H[0-7]{[aA-zZ,0-9][aA-zZ,0-9]}-{[aA-zZ][0-9]…}{A-Z}{U}_{[a-z]}{[1-N]}{_description}
+﻿H[0-7]{[aA-zZ,0-9][aA-zZ,0-9]}-{[aA-zZ][0-9]…}{A-Z}{U}_{[a-z]}{[1-N]}{_description}
 	... nested as needed
 	A-Z (exclude U) version number (only on pdfs)
 	U	if specifically a US version not compatible with an SA version
@@ -90,3 +90,10 @@ Prefix H7:  Array-wide support
 			-E panel E
 	H7s:  survey equipment
 		-t  total station
+	H7b:  bridge
+		H7br:  ramp (plywood)
+		H7bf:  foot (plywood)
+		H7bl:  long (2x4)
+		H7bc:  cross (2x4)
+		H7bd-1:down 1 (2x4)
+		H7bd-2:down 2 (2x4)
