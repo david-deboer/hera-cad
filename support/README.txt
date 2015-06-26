@@ -1,1 +1,0 @@
-For simplicity sake, the rimAssembly gets installed at the endAssembly, rather than at the element.iam.
