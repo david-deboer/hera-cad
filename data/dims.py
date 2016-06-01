@@ -62,17 +62,17 @@ class Dims:
                 self.d  = 18.0
                 self.t  = 4.0
                 self.p  = 63.0
-                self.e  = 0.0 #'find'
+                self.e  = 0.0
                 self.Ls = 377.0
                 self.g  = 38.0
-                self.q  = 10.0     #NOT MEASURED
-                self.Lh = 3000.0   #NOT MEASURED
-                self.rh = 200.0    #NOT MEASURED
+                self.q  = 6.0      #From internet
+                self.Lh = 2720.0
+                self.rh = 212.0
                 self.F  = 4500.0
                 self.D  = 14000.0
                 self.ri = 458/2.0
                 self.ro = 916/2.0
-                self.intermediateSparOffset = 1 #NOT MEASURED
+                self.intermediateSparOffset = 6.0  #From internet
             elif loc=='us':
                 self.units = 'in'
                 self.rn = 1.0
