@@ -62,7 +62,7 @@ class Dims:
                 self.d  = 18.0
                 self.t  = 4.0
                 self.p  = 63.0
-                self.e  = 'find'
+                self.e  = 0.0 #'find'
                 self.Ls = 377.0
                 self.g  = 38.0
                 self.q  = 10.0     #NOT MEASURED
@@ -163,7 +163,7 @@ class Dims:
         a = self.s - 2.0*self.t - self.p
         if type(self.e) is str:
 	    self.rs = self.rn - self.d + self.Ls
-	    self.e  = self.rs*(self.rs-self.rn)/(2.0*self.F)
+	    self.e  = a - self.rs*(self.rs-self.rn)/(2.0*self.F)
 	else:
 	    self.e = 0.0
 	    self.rs = (self.rn + math.sqrt(self.rn**2 + 8.0*a*self.F))/2.0
