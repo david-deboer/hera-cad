@@ -56,22 +56,24 @@ class Dims:
                 self.intermediateSparOffset = 20.0
             elif loc=='sa':
                 self.units = 'mm'
-                self.rn = 240.0
-                self.b  = 60.0
-                self.s  = 88.0
-                self.d  = 18.0
-                self.t  = 4.0
+                self.nh = 5.0      #nailhead
+                self.dctr = 20.0
+                self.d = self.dctr-self.nh/2.0  
+                self.ri = 458.0/2.0
+                self.ro = 916/2.0
+                self.rn = self.ri  #could put half the hub wall thickness if picky
+                self.rh = self.rn - self.d
+                self.b  = 59.0
+                self.s  = 90.0
+                self.t  = 3.9      #90 class 9 UPVC
                 self.p  = 63.0
                 self.e  = 0.0
-                self.Ls = 377.0
-                self.g  = 38.0
+                self.Ls = 'find'
+                self.g  = 38.5
                 self.q  = 6.0      #From internet
                 self.Lh = 2720.0
-                self.rh = 212.0
                 self.F  = 4500.0
                 self.D  = 14000.0
-                self.ri = 458/2.0
-                self.ro = 916/2.0
                 self.intermediateSparOffset = 6.0  #From internet
             elif loc=='us':
                 self.units = 'in'
