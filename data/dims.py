@@ -2,7 +2,7 @@ import math
 import numpy as np
 
 class Dims:
-    def __init__(self,loc='uk'):
+    def __init__(self,loc='sa'):
         """Dimensions for hardware lengths of HERA antennas."""
         self.loc = loc
         if loc=='?' or loc=='help':
