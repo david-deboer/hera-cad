@@ -56,7 +56,7 @@ class Dims:
                 self.intermediateSparOffset = 20.0
             elif loc=='sa':
                 self.units = 'mm'
-                self.nh = 5.0      #nailhead
+                self.nh = 8.9      #nailhead
                 self.dctr = 20.0
                 self.d = self.dctr-self.nh/2.0  
                 self.ri = 458.0/2.0
