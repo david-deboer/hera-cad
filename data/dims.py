@@ -22,7 +22,7 @@ class Dims:
             print '\tD:  diameter'
             print '\tri: inner hub diameter'
             print '\tro: outer hub diameter'
-            print '\tintermediateSparOffset:  offset of intermediate spar T'
+            print '\tC:  offset of intermediate spar T'
             print "\tpanel['A-E']: length of panel A-E"
             print "\tpanel['Overlap']:  panel overlap"
         else:
@@ -167,14 +167,14 @@ class Dims:
         """Sleeve calcs:  Ls, rs, e"""
         a = self.s - 2.0*self.t - self.p
         if type(self.e) is str:
-	    self.rs = self.rn - self.d + self.Ls
-	    self.e  = a - self.rs*(self.rs-self.rn)/(2.0*self.F)
-	else:
-	    self.e = 0.0
-	    self.rs = (self.rn + math.sqrt(self.rn**2 + 8.0*a*self.F))/2.0
+            self.rs = self.rn - self.d + self.Ls
+            self.e  = a - self.rs*(self.rs-self.rn)/(2.0*self.F)
+        else:
+            self.e = 0.0
+            self.rs = (self.rn + math.sqrt(self.rn**2 + 8.0*a*self.F))/2.0
             self.Ls = self.rs - self.rn + self.d
-    def arclength(self,r):
-        """Arclength of parabola radius r (with given focal length)"""
+    def r2s(self,r):
+        """arclength of parabola radius r (with given focal length)"""
         t = 2.0*self.F
         p = r
         q = math.sqrt(t**2 + p**2)
@@ -187,23 +187,23 @@ class Dims:
         if precision is None:
 	    precision  = (r_stop - r_start)/10000.0
         for r in np.arange(r_start,r_stop,precision):
-            s1 = self.arclength(r)
+            s1 = self.r2s(r)
             if s1> s:
                 break
         return r
     def fullSpar(self):
         """Length of the full spar"""
-        s1 = self.arclength(self.D/2.0)
-        s2 = self.arclength(self.rn)
+        s1 = self.r2s(self.D/2.0)
+        s2 = self.r2s(self.rn)
         self.fullSpar = s1 - s2 + self.d
     def intermediateSpar(self):
         cosa1 = math.cos(math.pi/12.0)
-        self.rc = self.arclength(self.crossRadius*cosa1) + self.C
-        self.sc = self.arclength(self.rc)
-        self.intermediateSpar = self.arclength(self.D/2.0) - self.sc
+        self.rc = self.r2s(self.crossRadius*cosa1) + self.C
+        self.sc = self.r2s(self.rc)
+        self.intermediateSpar = self.r2s(self.D/2.0) - self.sc
     def crossRadius(self):
         """Find radial position of the cross spar"""
-        s2 = self.arclength(self.ro)
+        s2 = self.r2s(self.ro)
         cosa = math.cos(math.pi/12.0)
         s = s2 + (self.panel['A'] - self.panel['Overlap']/2.0+self.p/2.0)/cosa
         self.crossRadius = self.s2r(s)  #This is at center of the long spar for outer edge of cross-piece spar
@@ -212,21 +212,21 @@ class Dims:
         cosa = math.cos(math.pi/12.0)
         self.crossLength = 2.0*self.crossRadius*math.sin(math.pi/12.0) - self.p/cosa
     def _sparMarks(self):
-        s1 = self.arclength(self.crossRadius) - (self.p/2.0)*math.tan(math.pi/12.0)
-        s2 = self.arclength(self.rn) + self.d
+        s1 = self.r2s(self.crossRadius) - (self.p/2.0)*math.tan(math.pi/12.0)
+        s2 = self.r2s(self.rn) + self.d
         sCross = s1-s2
         self.sparMarks = {'1Spar:Cross-Piece':sCross}
         self.metalStrips()
         if self.loc == 'uk':  #These are those 'check' distances near end of spars
 	    rD = 6820.0
-            s1 = self.arclength(rD)
-            s2 = self.arclength(self.rn)
+            s1 = self.r2s(rD)
+            s2 = self.r2s(self.rn)
             fullSparDmark = s1-s2
             self.sparMarks['3Guide:Full-Spar']=fullSparDmark
             #print 'full spar length to Dmark = ',fullSparDmark
             rIi = 6750.0
-            s1 = self.arclength(rIi)
-            s2 = self.arclength(self.crossRadius*math.cos(math.pi/12.0)) + self.intermediateSparOffset
+            s1 = self.r2s(rIi)
+            s2 = self.r2s(self.crossRadius*math.cos(math.pi/12.0)) + self.intermediateSparOffset
             intermediateSparDmark = s1-s2
             #print 'intermediate spar length to Dmark = ',intermediateSparDmark
             self.sparMarks['3Guide:Intermediate-Spar'] = intermediateSparDmark
@@ -234,8 +234,8 @@ class Dims:
         """Calculate spar marks for metal strips"""
         cosa1 = math.cos(math.pi/12.0)
         cosa2 = math.cos(math.pi/24.0)
-        snail = self.arclength(self.rn)
-        shub = self.arclength(self.ro)
+        snail = self.r2s(self.rn)
+        shub = self.r2s(self.ro)
         print '=======>',snail,self.sc
         sAB = shub + (self.panel['A'] - self.panel['Overlap']/2.0)/cosa1  #This is the cross-piece (to center of cross, not outer)
         sBC = sAB + (self.panel['B']-self.panel['Overlap'])/cosa2
