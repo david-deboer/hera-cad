@@ -57,7 +57,7 @@ class Dims:
             elif loc=='sa':
                 self.units = 'mm'
                 self.nh = 8.9      #nailhead
-                self.dctr = 20.0
+                self.dctr = 20.0   #distance from end of sleeve to center of nail hole
                 self.d = self.dctr-self.nh/2.0  
                 self.ri = 458.0/2.0
                 self.ro = 916/2.0
@@ -74,21 +74,28 @@ class Dims:
                 self.Lh = 2720.0
                 self.F  = 4500.0
                 self.D  = 14000.0
-                self.C = 6.0  #From internet, intermediate spar offset
+                self.C = self.q
             elif loc=='us':
                 self.units = 'in'
-                self.rn = 1.0
-                self.b  = 1.0
-                self.s  = 1.0
-                self.d  = 1.0
-                self.t  = 1.0
-                self.p  = 1.0
-                self.g  = 1.0
-                self.q  = 1.0
-                self.Lh = 1.0
-                self.rh = 1.0
-                self.F  = 1.0
-                self.D  = 1.0
+                self.nh = 0.25      #nailhead
+                self.dctr = 0.8
+                self.d = self.dctr-self.nh/2.0  
+                self.ri = 9.2
+                self.ro = 18.365
+                self.rn = self.ri  #could put half the hub wall thickness if picky
+                self.rh = self.rn - self.d
+                self.b  = 2.35
+                self.s  = 3.5      # 3" sch40
+                self.t  = 0.216
+                self.p  = 2.375    # 2" sch 40
+                self.e  = 0.0
+                self.Ls = 'find'
+                self.g  = 1.388
+                self.q  = .75      ##########!!!!!!!!!!!!!Depends on couplers you buy!!!!!!!!!!!!!!
+                self.Lh = 10.0*12.0
+                self.F  = 450.0/2.54
+                self.D  = 1400.0/2.54
+                self.C = self.q
             if self.precision is None:
                 if self.units == 'mm':
                     self.precision = 0
@@ -97,7 +104,7 @@ class Dims:
                 elif self.units == 'in':
                     self.precision = 1
             if self.units != 'mm':
-                for k in self.panel.keywords():
+                for k in self.panel.keys():
                     self.panel[k] = self.panel[k]*self.mm2unit[self.units]
             self.calc()
             self.show()
@@ -236,7 +243,6 @@ class Dims:
         cosa2 = math.cos(math.pi/24.0)
         snail = self.r2s(self.rn)
         shub = self.r2s(self.ro)
-        print '=======>',snail,self.sc
         sAB = shub + (self.panel['A'] - self.panel['Overlap']/2.0)/cosa1  #This is the cross-piece (to center of cross, not outer)
         sBC = sAB + (self.panel['B']-self.panel['Overlap'])/cosa2
         self.sparMarks['2Metal:BC-long'] = sBC - snail
