@@ -54,6 +54,9 @@ Prefix H2:  Frontend
 			-i  intermediate piece
 			-s  short piece
 		H2bs:  surface (mesh/pvc)
+                        -c circular arc piece
+                        -h horizontal arm
+                        -v vertical arm
 	H2d:  dipole
 		H2dt:  top disc
 		H2db:  bottom disc
