@@ -301,7 +301,7 @@ class HeraConfig:
         fp.write(s)
         fp.close()
 
-    def subtract(self,arr):
+    def subtract(self,arr,instruct=None):
         """Subtract arr values from self.ants,poles,posts"""
         dants = []
         dpoles = []
@@ -333,13 +333,15 @@ class HeraConfig:
         self.dants = np.array(dants)
         self.dpoles = np.array(dpoles)
         self.dposts = np.array(dposts)
-        plt.figure('subtracted')
-        plt.plot(self.dants[:,0],self.dants[:,1],'wo',markersize=11)
-        plt.plot(self.dpoles[:,0],self.dpoles[:,1],'o')
-        plt.plot(self.dposts[:,0],self.dposts[:,1],'x')
-        plt.axis('image')
-        print 'Subracting %d from %d.  Need the following:' % (len(arr.stations),len(self.stations))
+        print 'Subtracting %d from %d.  Need the following:' % (len(arr.stations),len(self.stations))
         print '\t'+str(len(self.dants))+' more antennas (dants)'
         print '\t'+str(len(self.dpoles))+' more poles (dpoles)'
         print '\t'+str(len(self.dposts))+' more posts (dposts)'
+
+        if instruct=='plotit':
+            plt.figure('subtracted')
+            plt.plot(self.dants[:,0],self.dants[:,1],'wo',markersize=11)
+            plt.plot(self.dpoles[:,0],self.dpoles[:,1],'o')
+            plt.plot(self.dposts[:,0],self.dposts[:,1],'x')
+            plt.axis('image')
 
