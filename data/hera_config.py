@@ -1,7 +1,7 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-import gisout as ge
+#import gisout as ge
 
 class HeraConfig:
     ########USER DEFINED ARRAYS AND SUBARRAYS############
@@ -229,27 +229,27 @@ class HeraConfig:
         fp.write(s)
         fp.close()
 
-    def kml(self,filePrefix=None,cofa_zone=34,psc=0.4):
-        if filePrefix is None:
-            filePrefix = self.useConfigFile.split('.')[0]
-        kfn = filePrefix+'.kml'
-        print 'Writing '+kfn
-        kmlfp = open(kfn,'w')
-        gfn = filePrefix+'.gpx'
-        gfp = open(gfn,'w')
-        print 'Writing '+gfn
-    
-        kmlfp.write(ge.kmlhdr('HERA',psc))
-        gfp.write(ge.garhdr('HERA'))
-        for ihc,hc in enumerate(self.ants):
-            x = hc[0]
-            y = hc[1]
-            kmlfp.write(ge.kmlplcmk(str(ihc),x,y,'utm',cofa_zone))
-            gfp.write(ge.garwypt(str(ihc),x,y,'utm',cofa_zone))
-        kmlfp.write(ge.kmltrlr())
-        gfp.write(ge.gartrlr())
-        kmlfp.close()
-        gfp.close()
+    #def kml(self,filePrefix=None,cofa_zone=34,psc=0.4):
+    #    if filePrefix is None:
+    #        filePrefix = self.useConfigFile.split('.')[0]
+    #    kfn = filePrefix+'.kml'
+    #    print 'Writing '+kfn
+    #    kmlfp = open(kfn,'w')
+    #    gfn = filePrefix+'.gpx'
+    #    gfp = open(gfn,'w')
+    #    print 'Writing '+gfn
+    #
+    #    kmlfp.write(ge.kmlhdr('HERA',psc))
+    #    gfp.write(ge.garhdr('HERA'))
+    #    for ihc,hc in enumerate(self.ants):
+    #        x = hc[0]
+    #        y = hc[1]
+    #        kmlfp.write(ge.kmlplcmk(str(ihc),x,y,'utm',cofa_zone))
+    #        gfp.write(ge.garwypt(str(ihc),x,y,'utm',cofa_zone))
+    #    kmlfp.write(ge.kmltrlr())
+    #    gfp.write(ge.gartrlr())
+    #    kmlfp.close()
+    #    gfp.close()
 
     def output21cmSenseAntposDict(self,fnout='hera_split_dict.txt'):
         print 'Writing '+fnout
