@@ -333,7 +333,7 @@ class HeraConfig:
         self.dants = np.array(dants)
         self.dpoles = np.array(dpoles)
         self.dposts = np.array(dposts)
-        print 'Subtracting %d from %d.  Need the following:' % (len(arr.stations),len(self.stations))
+        print '\nSubtracting %d from %d.  Need the following:' % (len(arr.stations),len(self.stations))
         print '\t'+str(len(self.dants))+' more antennas (dants)'
         print '\t'+str(len(self.dpoles))+' more poles (dpoles)'
         print '\t'+str(len(self.dposts))+' more posts (dposts)'

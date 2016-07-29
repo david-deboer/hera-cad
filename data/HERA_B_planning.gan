@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2016-05-01" view-index="0" gantt-divider-location="484" resource-divider-location="300" version="2.8" locale="en_US">
+    <description/>
+    <view zooming-state="default:11" id="gantt-chart">
+        <field id="tpd10" name="ID" width="7" order="0"/>
+        <field id="tpd3" name="Name" width="28" order="1"/>
+        <field id="tpd4" name="Begin date" width="15" order="2"/>
+        <field id="tpd5" name="End date" width="15" order="3"/>
+        <field id="tpd9" name="Predecessors" width="16" order="4"/>
+        <field id="tpd6" name="Duration" width="15" order="5"/>
+        <option id="color.recent"><![CDATA[#000000]]></option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Name" width="50" order="0"/>
+        <field id="1" name="Default role" width="50" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="1" mon="0" tue="0" wed="0" thu="0" fri="0" sat="1"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="22" name="HERA-37 buildout" color="#8cb6ce" meeting="false" start="2016-07-01" duration="100" complete="0" expand="true">
+            <depend id="24" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="0" name="HERA-37 ops" color="#8cb6ce" meeting="false" start="2016-10-03" duration="150" complete="0" expand="true">
+            <depend id="2" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="1" name="Container Relo" meeting="false" start="2016-08-01" duration="209" complete="0" expand="true">
+            <task id="6" name="Prep ground" color="#8cb6ce" meeting="false" start="2016-08-01" duration="5" complete="0" expand="true">
+                <depend id="2" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="7" name="Power infra" color="#8cb6ce" meeting="false" start="2016-09-05" duration="1" complete="0" expand="true">
+                <depend id="2" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="9" name="Fiber infra" color="#8cb6ce" meeting="false" start="2016-10-03" duration="1" complete="0" expand="true">
+                <depend id="2" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="2" name="Move it" color="#8cb6ce" meeting="false" start="2017-05-01" duration="14" complete="0" expand="true"/>
+        </task>
+        <task id="15" name="Block 1 poles" color="#8cb6ce" meeting="false" start="2016-07-04" duration="90" complete="0" expand="true">
+            <task id="35" name="tender" color="#8cb6ce" meeting="false" start="2016-07-04" duration="50" complete="0" expand="true">
+                <depend id="36" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="36" name="install" color="#8cb6ce" meeting="false" start="2016-09-12" duration="40" complete="0" expand="true">
+                <depend id="24" type="1" difference="10" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="24" name="HERA-B1 buildout" color="#8cb6ce" meeting="false" start="2016-11-18" duration="200" complete="0" expand="true">
+            <depend id="52" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="63" name="Node install" meeting="false" start="2016-11-14" duration="120" complete="0" expand="true">
+            <task id="65" name="Enclosures" color="#8cb6ce" meeting="false" start="2016-11-14" duration="120" complete="0" expand="true"/>
+        </task>
+        <task id="28" name="HERA-B1 ops" color="#8cb6ce" meeting="false" start="2017-10-02" duration="150" complete="0" expand="true">
+            <depend id="64" type="2" difference="0" hardness="Strong"/>
+        </task>
+        <task id="64" name="KAPB install" color="#8cb6ce" meeting="false" start="2018-04-30" duration="50" complete="0" expand="true"/>
+        <task id="34" name="HERA-350 poles" meeting="false" start="2016-09-12" duration="180" complete="0" expand="true">
+            <task id="46" name="tender" color="#8cb6ce" meeting="false" start="2016-09-12" duration="100" complete="0" expand="true">
+                <depend id="47" type="2" difference="0" hardness="Strong"/>
+            </task>
+            <task id="47" name="install" color="#8cb6ce" meeting="false" start="2017-01-30" duration="80" complete="0" expand="true">
+                <depend id="52" type="1" difference="10" hardness="Strong"/>
+            </task>
+        </task>
+        <task id="52" name="HERA-350 buildout" color="#8cb6ce" meeting="false" start="2017-08-25" duration="300" complete="0" expand="true"/>
+        <task id="56" name="HERA-243 ops" color="#8cb6ce" meeting="false" start="2018-10-01" duration="160" complete="0" expand="true"/>
+    </tasks>
+    <resources/>
+    <allocations/>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
