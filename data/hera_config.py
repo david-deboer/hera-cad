@@ -1,7 +1,7 @@
 import numpy as np
 import math
 import matplotlib.pyplot as plt
-import gisout as ge
+#import gisout as ge
 
 class HeraConfig:
     ########USER DEFINED ARRAYS AND SUBARRAYS############
@@ -261,7 +261,7 @@ class HeraConfig:
         s = '0 %.4f %.4f 0\n' % (self.longlat[0], self.longlat[1])
         fp.write(s)
         fp.close()
-
+        
     def kml(self,filePrefix=None,cofa_zone=34,psc=0.4):
         if filePrefix is None:
             filePrefix = self.arrayFileName.split('.')[0]
