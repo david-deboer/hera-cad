@@ -1,4 +1,9 @@
-from mpl_toolkits.basemap import pyproj
+try:
+    from mpl_toolkits.basemap import pyproj
+    basemapImported = True
+except ImportError:
+    print 'basemap not found'
+    basemapImported = False
 
 ##############KML##################
 def kmlplcmk(name,x,y,units='utm',zone=34):
@@ -34,7 +39,7 @@ def kmltrlr():
     kml = '</Document>\n</kml>\n'
     return kml
 
-################Garman#################
+################Garmin#################
 def garwypt(name,x,y,units='utm',zone=34):
     if units=='utm':
         lon,lat = utm2ll(x,y,zone)
@@ -61,19 +66,20 @@ def gartrlr():
     return gar
     
 ###########Conversions################
-def utm2ll(x,y,zone=34):
-    p = pyproj.Proj(proj='utm',zone=zone,south=True,ellps='WGS84')
-    return p(x,y,inverse=True)
+if basemapImported:
+    def utm2ll(x,y,zone=34):
+        p = pyproj.Proj(proj='utm',zone=zone,south=True,ellps='WGS84')
+        return p(x,y,inverse=True)
 
-def ll2utm(lon,lat):
-    #lon needs to be between +/-180
-    zone = (int((180 + lon) / 6.0) + 1) % 60
-    print "ZONE:  ",zone
-    #zone needs to be between 1 and 60
-    centralMeridian = zone * 6 - 180 - 3
-    south = False
-    if lat < 0.0:
-        south = True
+    def ll2utm(lon,lat):
+        #lon needs to be between +/-180
+        zone = (int((180 + lon) / 6.0) + 1) % 60
+        print "ZONE:  ",zone
+        #zone needs to be between 1 and 60
+        centralMeridian = zone * 6 - 180 - 3
+        south = False
+        if lat < 0.0:
+            south = True
 
-    p = pyproj.Proj(proj='utm',zone=zone,south=south,ellps='WGS84')
-    return p(lon,lat)
+        p = pyproj.Proj(proj='utm',zone=zone,south=south,ellps='WGS84')
+        return p(lon,lat)
