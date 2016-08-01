@@ -5,7 +5,7 @@ diameter of dish
 sparOD (outer diameter of the PVC used for the spars)
 	63 mm
 sparWall - PVC/U class 12 (need to double-check)
-	3.1 mm
+	3.6 mm
 
 #####HUB#####
 hubOuterDiam - nominal outer diameter of hub ring
@@ -19,7 +19,7 @@ sleeveOD - outer diameter of the pvc sleeve
 sleeveWall - wall thickness
 	3.9 mm (U class 9)
 sleeveLength - length of sleeve in hub (PVC/U 90mm class 9)
-	37.7 cm
+	334 mm
 nailDelta - position of nail from sleeve end
 	2 cm
 olap1 - ring overlap for outer, side without conduit
