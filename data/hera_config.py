@@ -43,7 +43,7 @@ class HeraConfig:
                             format:  station#, E-W, N-S
                             default:  [None], which uses self.useConfigFile
                 offset: 3-element array with type and reference position for applying offset, LL or a##
-                            default:  [None], which sets to 'LL' and self.h19ll
+                            default:  [None], which sets to antenna 0 and self.h19ll
             Outputs are:
                 N:  number of antennas (int)
                 ants:   list of UTM center positions ordered by station# (numpy array)
@@ -86,15 +86,15 @@ class HeraConfig:
         self.ants = np.array(self.ants)
         self.N = len(self.ants)
 
-        #Get offset parameters and split out core/outriggers
+        #Get offset parameters and apply
         if offset is None:
-            offset = ['LL',self.h19ll[0],self.h19ll[1]]
+            offset = ['a0',self.h19ll[0],self.h19ll[1]]
         elif type(offset) is str:
             offset = [offset,self.h19ll[0],self.h19ll[1]]
-        self._getCoreOutriggers()
-
-        #Apply offset and locate poles/posts
         self.applyOffset(offset)
+
+        #Split out core and locate poles/posts
+        self._getCoreOutriggers() 
         self._getPolesPosts()
     
     def _close(self,a,b,colocatedDistance=1.0):
@@ -138,10 +138,10 @@ class HeraConfig:
         refLoc = [offset[1],offset[2]]
         if refType=='LL':                  #lower left
             refVal=[1E9,1E9]
-            for c in self.core:            #find southernmost
+            for c in self.ants:            #find southernmost
                 if c[1]<refVal[1]:
                     refVal[1] = c[1]
-            for c in self.core:            #find westernmost in that row
+            for c in self.ants:            #find westernmost in that row
                 if abs(c[1]-refVal[1])<0.1:
                     if c[0]<refVal[0]:
                         refVal[0]=c[0]
@@ -159,10 +159,6 @@ class HeraConfig:
         print 'Offset to type '+refType,
         print self.offset
         self.ants = self.ants - self.offset
-        if self.foundCore:
-            self.core = self.core - self.offset
-        if self.foundOutriggers:
-            self.outriggers = self.outriggers - self.offset
         if apply2allants:
             for i in self.allants.keys():
                 self.allants[i][0] = self.allants[i][0]-self.offset[0]
@@ -244,23 +240,36 @@ class HeraConfig:
         for k in self.allants.keys():
             plt.plot(self.allants[k][0],self.allants[k][1],'ko')
             plt.text(self.allants[k][0],self.allants[k][1],str(k))
+
     def scr(self,filePrefix=None):
         """autocad file script"""
         if filePrefix is None:
             filePrefix = self.arrayFileName.split('.')[0]
-        fp_ant = open(filePrefix+'.scr','w')
+        fn = filePrefix+'.scr'
+        fp = open(fn,'w')
         for a in self.ants:
-            fp_ant.write('CIRCLE %.4f,%.4f\n' % (a[0],a[1]))
-            fp_ant.write('%.2f\n'%(self.D/2.0))
-        fp_ant.close()
-        hbpn = 'hexbigpoles.scr'
-        hexfp = open(hbpn,'w')
-        for h in hexBigPoles:  #pick one format below
-            s = 'CIRCLE %f,%f\n.2\n' % (h[0],h[1])
-            s = '%.2f\t%.2f\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
-            s = 'CIRCLE %.2f,%.2f\n0.2\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
-            hexfp.write(s)
-        hexfp.close()
+            fp.write('CIRCLE %.4f,%.4f\n' % (a[0],a[1]))
+            fp.write('%.2f\n'%(self.D/2.0))
+        fp.write('\n')
+        fp.close()
+        fn = filePrefix+'_poles.scr'
+        fp = open(fn,'w')
+        for h in self.poles:  #pick one format below
+            s = 'CIRCLE %.4f,%.4f\n0.2\n' % (h[0],h[1])
+            #s = '%.2f\t%.2f\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
+            #s = 'CIRCLE %.2f,%.2f\n0.2\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
+            fp.write(s)
+        fp.write('\n')
+        fp.close()
+        fn = filePrefix+'_posts.scr'
+        fp = open(fn,'w')
+        for h in self.posts:  #pick one format below
+            s = 'CIRCLE %.4f,%.4f\n0.1\n' % (h[0],h[1])
+            #s = '%.2f\t%.2f\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
+            #s = 'CIRCLE %.2f,%.2f\n0.2\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
+            fp.write(s)
+        fp.write('\n')
+        fp.close()
 
     def iAntConfig(self):
         iacf = 'hera.enu.%.0fx4.txt' % (len(self.ants))
@@ -340,7 +349,7 @@ class HeraConfig:
         fpOut.close()
         return
 
-    def subtract(self,arr,instruct=None):
+    def remove(self,arr,instruct=None):
         """Removes arr values (ants, poles, posts) from self.ants, poles, posts
         and stores in dants, dpoles and dposts"""
         dants = []
