@@ -21,7 +21,9 @@ class HeraConfig:
     hera['block1'] = [0,1,2,11,12,13,14,23,24,25,26,27,37,38,39,40,52,53,54,3,15,28,36,41,42,51,55,56,67,68,69,70,71,84,85,86,87,
     4,5,6,7,8,9,10, 16,17,18,19,20,21,29,30,31,32,33,43,44,45,46, 50,57,58,59,60,65,66,72,73,74,75,81,82,83,88,89,90,91,98,
     99,100,101,102,103,104,105,106,107,108,116,117,118,119,120,121,122,123,124,125,126, 135,136,137,138,139,140,141,142,143,144,145]
-    useConfigFile = 'SplitCore_HERA-350.txt'
+    hera['core'] = range(320)
+    hera['outriggers'] = range(320,350)
+    useConfigFile = 'SplitCore_HERA-350_v3.txt'
     D = 14.0
     rim2rim = 0.6
     spacing = D + rim2rim
@@ -103,7 +105,7 @@ class HeraConfig:
         return ae
         
     def _getCoreOutriggers(self):
-        ###Find core antennas
+        """Locate core antennas by simple distance method"""
         core=[]
         self.foundCore = False
         for coreTrial in self.ants:
@@ -239,10 +241,11 @@ class HeraConfig:
     def plotNumbered(self,fignum=False):
         if fignum:
             plt.figure(fignum)
-        for k in self.allAntsInFile.keys():
-            plt.plot(self.allAntsInFile[k][0][0],self.allAntsInFile[k][0][1],'ko')
-            plt.text(self.allAntsInFile[k][0][0],self.allAntsInFile[k][0][1],str(k))
+        for k in self.allants.keys():
+            plt.plot(self.allants[k][0],self.allants[k][1],'ko')
+            plt.text(self.allants[k][0],self.allants[k][1],str(k))
     def scr(self,filePrefix=None):
+        """autocad file script"""
         if filePrefix is None:
             filePrefix = self.arrayFileName.split('.')[0]
         fp_ant = open(filePrefix+'.scr','w')
@@ -250,6 +253,14 @@ class HeraConfig:
             fp_ant.write('CIRCLE %.4f,%.4f\n' % (a[0],a[1]))
             fp_ant.write('%.2f\n'%(self.D/2.0))
         fp_ant.close()
+        hbpn = 'hexbigpoles.scr'
+        hexfp = open(hbpn,'w')
+        for h in hexBigPoles:  #pick one format below
+            s = 'CIRCLE %f,%f\n.2\n' % (h[0],h[1])
+            s = '%.2f\t%.2f\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
+            s = 'CIRCLE %.2f,%.2f\n0.2\n' % (h[0]+center_of_array[0],h[1]+center_of_array[1])
+            hexfp.write(s)
+        hexfp.close()
 
     def iAntConfig(self):
         iacf = 'hera.enu.%.0fx4.txt' % (len(self.ants))
@@ -301,8 +312,37 @@ class HeraConfig:
         fp.write(s)
         fp.close()
 
+    def transferAntNumbers(self,unnumberedFile,numberedFile=False,outFile='numbered.txt'):
+        """Takes antenna numberings/locations from numberedFile and finds nearest antenna location in unnumberedFile
+           Write new file with numberings and locations to outFile (default='numbered.txt')"""
+        if not numberedFile:
+            numberedFile = self.arrayFileName
+        numbered   = np.loadtxt(numberedFile,usecols=(0,1,2))
+        unnumbered = np.loadtxt(unnumberedFile,usecols=(0,1))
+        orderedNumbers = []
+        for unloc in unnumbered:
+            dmin = 1.0E6
+            nearest = -1
+            for loc in numbered:
+                d = math.sqrt( (loc[1] - unloc[0])**2 + (loc[2]-unloc[1])**2 )
+                if d < dmin:
+                    dmin = d
+                    nearest=int(loc[0])
+            orderedNumbers.append(nearest)
+        i=0
+        fpIn = open(unnumberedFile,'r')
+        fpOut = open(outFile,'w')
+        for line in fpIn:
+            s = '%3s  %s' % (str(orderedNumbers[i]),line)
+            i+=1
+            fpOut.write(s)
+        fpIn.close()
+        fpOut.close()
+        return
+
     def subtract(self,arr,instruct=None):
-        """Subtract arr values from self.ants,poles,posts"""
+        """Removes arr values (ants, poles, posts) from self.ants, poles, posts
+        and stores in dants, dpoles and dposts"""
         dants = []
         dpoles = []
         dposts = []
