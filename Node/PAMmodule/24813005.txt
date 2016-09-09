@@ -1,0 +1,12 @@
+﻿"Symbol";"Value";"Unit";
+"TraceParts.PartNumber";"30-07022014-094149";"";
+"REFERENCE";"24813005";"";
+"TraceParts.PartTitle";"Frame-type plug-in units PRO with hood, 3 U, front panel shielded (textile gasket)";"";
+"TraceParts.InstanceId";"30-07022014-0941498DKL5QO617MFTN2NAWYE3DVT9";"";
+"TraceParts.PartStatus";"Published";"";
+"TraceParts.PartStatusId";"";"";
+"SUPPLIER";"Pentair/Schroff";"";
+"TraceParts.PartVersion";"1.0.8";"";
+"TRACEPARTS";"TRACEPARTS";"";
+"TraceParts.PartLanguage";"en";"";
+"TraceParts.ClassPath";"SCHROFF:/F_SCHROFF/30-07022014-094149";"";
