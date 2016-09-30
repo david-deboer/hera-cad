@@ -5,4 +5,5 @@
 *.gz
 *.lck
 *.ini
+*.pyc
 OldVersions
