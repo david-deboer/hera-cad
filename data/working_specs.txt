@@ -1,0 +1,2 @@
+coaxial/copper cable length from node to feed:  35m  +/- 1cm
+
