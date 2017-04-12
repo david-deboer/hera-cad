@@ -1,7 +1,42 @@
+#from __future__ import print_function
+
 import numpy as np
 import math
 import matplotlib.pyplot as plt
 import gisout as ge
+
+def Nodes(node_filename='nodes.txt'):
+    fp = open(node_filename,'r')
+    nodes = {}
+    check_ants = []
+    for line in fp:
+        data = line.split(':')
+        node_number = int(data[0].strip())
+        if node_number in nodes.keys():
+            print 'node', node_number, 'already found'
+        node_position = data[1].split(',')
+        node_position = [float(x) for x in node_position]
+        node_antennas = data[2].split(',')
+        nodes[node_number] = [int(x) for x in node_antennas]
+        for a in node_antennas:
+            if a in check_ants:
+                print 'antenna', a, 'already found'
+                return 0
+        check_ants+=node_antennas
+    fp.close()
+    print 'Total number of antennas found is',len(check_ants)
+    skeys = sorted(nodes.keys())
+    total_snaps = 0
+    print 'Core nodes'
+    for k in skeys:
+        if k==30:
+            print "Outrigger nodes"
+        num_ants = len(nodes[k])
+        num_snaps = int(math.ceil(num_ants/3.0))
+        total_snaps+=num_snaps
+        print '\tNode %2d has %2d antennas and needs %d snap boards' % (k,num_ants,num_snaps)
+    print 'Need a total of',total_snaps,'snap boards'
+    return nodes
 
 class HeraConfig:
     ########USER DEFINED ARRAYS AND SUBARRAYS############
@@ -280,6 +315,13 @@ class HeraConfig:
             fp.write(s)
         s = '0 %.4f %.4f 0\n' % (self.longlat[0], self.longlat[1])
         fp.write(s)
+        fp.close()
+
+    def antennaConfigTxtfile(self,fn='HERA_350.txt'):
+        fp = open(fn,'w')
+        for i,a in enumerate(self.ants):
+            s = "HH%d\t%.2f\t%.2f\n" % (self.stations[i],a[0],a[1])
+            fp.write(s)
         fp.close()
         
     def kml(self,filePrefix=None,cofa_zone=34,psc=0.4):
