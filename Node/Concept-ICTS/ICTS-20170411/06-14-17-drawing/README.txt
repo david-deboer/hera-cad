@@ -1,0 +1,2 @@
+The actual inside diameter of the waveguide ended up being .5" because it was easier for SSL to get a pipe of .5" than boring out .495" as specified in the drawings.
+This resulted in a cheaper price and did not significantly affect the attenuation vs. frequency curve.
