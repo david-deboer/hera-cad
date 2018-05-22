@@ -1,0 +1,102 @@
+﻿H[0-7]{[aA-zZ,0-9][aA-zZ,0-9]}-{[aA-zZ][0-9]…}{A-Z}{U}_{[a-z]}{[1-N]}{_description}
+	... nested as needed
+	A-Z (exclude U) version number (only on pdfs)
+	U	if specifically a US version not compatible with an SA version
+	a-z	view counter (or some other view-specific item(s))
+	1-N	number of pages (for pdf)
+	description (typically the filename)
+	note that everything after the underscore (‘_’) relates to the specific drawing (idw and/or pdf) or is helpful description (e.g. part filename)
+
+e.g. H2bm-pA_a_bpPlate
+     \ pn  /\ other  /
+
+Prefix H0:  Explanatory document
+Prefix H1:  Element
+	H10:  purchased parts
+	H1h:  hub
+		H1hi:  inner rim ring
+		H1ho:  outer rim ring
+			-1 original
+			-2 mirror image
+		H1hs:  spar sleeves
+		H1hu:  support spars
+		H1hc:  cement
+	H1p:  support
+		H1pe:  endcap
+			-l left
+			-r right (mirror)
+		H1pl:  pole assembly
+			-v vertical assembly
+			-h horizontal assembly
+		H1ps:  post assembly
+		H1pr:  rim assembly
+			-h long horizontal piece
+			-s spar holder
+		H1pv:  vertical support assembly
+		H1p:   assembly
+		H1po:  overlap strips
+			-2 shortest
+			-3 middle
+			-4 longest
+	H1r:  surface
+		H1rf:  full spars
+		H1ri:  intermediate spars
+		H1rc:  cross spar assembly
+		H1rs:  surface panels
+Prefix H2:  Frontend
+	H20:  purchased parts
+		eyebolt
+	H2c:  collar
+	H2b:  backplane
+		H2bm:  mechanical backplane
+			-p  circular plate (disc)
+			-l  long piece 
+			-i  intermediate piece
+			-s  short piece
+		H2bs:  surface (mesh/pvc)
+                        -c circular arc piece
+                        -h horizontal arm
+                        -v vertical arm
+	H2d:  dipole
+		H2dt:  top disc
+		H2db:  bottom disc
+	H2l:  lna and support
+	H2s:  support (central rope, springs, )
+	H2c:  coaxial cable
+	H2p:  power cable
+Prefix H3:  Node
+	H30:  purchased parts
+	H3s:  SNAP board
+Prefix H4:  Container
+	H40:  purchased parts
+	H4f:  fiber
+	H4t:  timing
+		-g  gps
+		-c  clock
+	H4p:  power
+Prefix H5:  KAPB
+	H50:  purchased parts
+	H5s:  switch
+	H5g:  processor
+	H5n:  network
+	H5p:  power
+Prefix H6:  Computing
+Prefix H7:  Array-wide support	
+	H7j:  jigs
+		H7jh:  hub jig
+		H7jc:  hub centering
+		H7jp:  panel frames
+			-A panel A
+			-B panel B
+			-C panel C
+			-D panel D
+			-E panel E
+	H7s:  survey equipment
+		-t  total station
+	H7b:  bridge
+		H7br:  ramp (plywood)
+		H7bf:  foot (plywood)
+		H7bl:  long (2x4)
+		H7bc:  cross (2x4)
+		H7bd-1:down 1 (2x4)
+		H7bd-2:down 2 (2x4)

@@ -1,0 +1,642 @@
+#LyX file created by tex2lyx 2.1
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass article
+\begin_preamble
+%\usepackage{abbrevs}
+\usepackage[pdftex]{graphicx}% could insert ``draft'' between []
+\usepackage{appendix}
+
+
+\setlength{\oddsidemargin}{0pt} % there is 1 inch before the
+                                % side margin in ``article'' class
+\setlength{\textwidth}{6.5in}
+
+\setlength{\voffset}{0pt}
+\setlength{\topmargin}{-0.75in}     % there is 1 inch before the
+                                % top margin in ``article'' class and
+                                % then room for header, etc.
+\setlength{\textheight}{10.0in}
+%%%%%%%%%%%
+
+\newcommand{\inch}{$^{\prime\prime}$}
+\newcommand{\foot}{$^{\prime}$}
+\renewcommand{\deg}{^\circ}
+
+
+\end_preamble
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package none
+\inputencoding auto
+\fontencoding default
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_math auto
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing single
+\use_hyperref true
+\pdf_bookmarks 0
+\pdf_bookmarksnumbered 0
+\pdf_bookmarksopen 0
+\pdf_bookmarksopenlevel 1
+\pdf_breaklinks 0
+\pdf_pdfborder 0
+\pdf_colorlinks 0
+\pdf_backref section
+\pdf_pdfusetitle 0
+\papersize default
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 0
+\use_package cancel 0
+\use_package esint 1
+\use_package mathdots 0
+\use_package mathtools 0
+\use_package mhchem 0
+\use_package stackrel 0
+\use_package stmaryrd 2
+\use_package undertilde 0
+\cite_engine natbib
+\cite_engine_type authoryear
+\biblio_style plainnat
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle empty
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+HERA Installation Procedure
+\end_layout
+
+\begin_layout Author
+David DeBoer
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+setcounter{tocdepth}{3}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset toc
+LatexCommand tableofcontents
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pole Installation
+\end_layout
+
+\begin_layout Standard
+After surveying the entire plat, the poles are installed on center with a 
+\begin_inset Formula $\pm$
+\end_inset
+
+10cm tolerance, per Figure 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:poles"
+
+\end_inset
+
+. The number of rows and poles per row is set by the hex order. Table 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:hexnums"
+
+\end_inset
+
+ shows important numbers for different orders. 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Graphics 
+	filename graphics/bigPoles.png
+	width 100text%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:poles"
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Layout of poles. Dimensions in meters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+\backslash
+centering
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Numbers
+\end_layout
+
+\end_inset
+
+. 
+\begin_inset Tabular 
+<lyxtabular version="3" rows="2" columns="6">
+<features rotate="0" tabularvalignment="middle" tabularwidth="0pt">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="none" valignment="top" special=" ">
+<column alignment="left" valignment="top">
+<column alignment="none" valignment="top" special=" ">
+<row>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+order 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+total number 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+4 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Standard
+x 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+<cell alignment="none" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:hexnums"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Pole Height
+\end_layout
+
+\begin_layout Standard
+Each trio of poles supports an antenna and each interior pole is shared by three antennas. A fiducial constant height must be measured for each trio and marked with a small eye-bolt. From within the circle circumscribed by the poles, this height may be measured by a theodolite along a bubble-level line or by a total station at constant 
+\begin_inset Formula $z$
+\end_inset
+
+. This height should be about 1.5-meters above the ground. 
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+
+\begin_layout Standard
+
+\begin_inset Graphics 
+	filename graphics/poles_and_ants.png
+	width 100text%
+
+\end_inset
+
+ 
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:poles_ants"
+
+\end_inset
+
+ 
+\begin_inset Caption Standard
+
+\begin_layout Standard
+Layout of poles. Dimensions in meters.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Hub Centering and Leveling
+\end_layout
+
+\begin_layout Standard
+With each pole with a constant height eye-bolt, the following is used to center the hub center: 
+\end_layout
+
+\begin_layout Subsection
+Radial lines
+\end_layout
+
+\begin_layout Standard
+A arrangement of three fixed length lines and three match spring attached on a small inner ring with a plumb-bob is used. See Figure refPicture.
+\end_layout
+
+\begin_layout Subsection
+Jig
+\end_layout
+
+\begin_layout Standard
+With the center point defined by the radial lines and hanging bob, a jig as described below is used.
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\start_of_appendix
+
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+%dummy comment inserted by tex2lyx to ensure that this paragraph is not empty
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Checklist
+\end_layout
+
+\begin_layout Standard
+
+\begin_inset FormulaMacro
+\renewcommand{\labelitemi}{$\boxempty$}
+\end_inset
+
+ 
+\begin_inset FormulaMacro
+\renewcommand{\labelitemii}{$\boxempty$}
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Itemize
+Install poles 
+\end_layout
+
+\begin_layout Itemize
+Survey pole marker fiducial heights (
+\begin_inset Formula $\approx$
+\end_inset
+
+ 1.5m) and install eye-bolts 
+\end_layout
+
+\begin_layout Itemize
+Install centering jig (H7jcen) 
+\end_layout
+
+\begin_layout Itemize
+Install hub forms with hub jig (H7jhub), using H7jcen to center 
+\end_layout
+
+\begin_layout Itemize
+Rotate hub to point to poles and conduit exit to correct direction 
+\end_layout
+
+\begin_layout Itemize
+Level with H7jhub and stakes 
+\end_layout
+
+\begin_layout Itemize
+Install support spars (P/N) (long 50mm PVC in bottom holes); peg in place with nails 
+\end_layout
+
+\begin_layout Itemize
+Install surface spar sleeves (P/N) (short 65mm PVC in top holes); peg in place with nails 
+\end_layout
+
+\begin_layout Itemize
+Install circular rebar (P/N) and straight central rebar (P/N) 
+\end_layout
+
+\begin_layout Itemize
+Install exit conduit (P/N) 
+\end_layout
+
+\begin_layout Itemize
+Pour concrete to top of form and let set 
+\end_layout
+
+\begin_layout Itemize
+Mark center point on rebar with cable tie (this is the vertex) and remove jigs 
+\end_layout
+
+\begin_layout Itemize
+Set-up Total Station on center and 60in above rebar 
+\end_layout
+
+\begin_layout Itemize
+Survey and install pole vertical assemblies (H1p2v) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+affix prism target on end of horizontal spar 
+\end_layout
+
+\begin_layout Itemize
+bottom at z=14.0in 
+\end_layout
+
+\begin_layout Itemize
+shim to vertical 
+\end_layout
+
+\begin_layout Itemize
+use qty 3 3/8
+\begin_inset Quotes erd
+\end_inset
+
+ lag bolts 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Survey and install pole horizontal assembly (H1p2h) 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+target at angle = 8.08
+\begin_inset Formula $^\circ$
+\end_inset
+
+, distance = 274.85in (z = 38.63in) 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Rough in posts (H1pxxx) between the poles using rim pieces (H1vvvvv), including post forms ( ) 
+\end_layout
+
+\begin_layout Itemize
+If unshared post or first installation of a shared post, survey and brace 
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+target at angle = 8.08
+\begin_inset Formula $^\circ$
+\end_inset
+
+, distance = 274.85in (z=38.63in) 
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+If shared post, survey using the offset piece (H1ggggg) and brace: target at ... 
+\end_layout
+
+\begin_layout Itemize
+Install rebar and concrete, let set and remove bracing 
+\end_layout
+
+\begin_layout Itemize
+Install vertical pvc support pieces on end of support spars (should point straight up) and level 
+\end_layout
+
+\begin_layout Itemize
+Install parabolic spars in hub (be sure pre-drilled holes are facing up) and affix at ends 
+\end_layout
+
+\begin_layout Itemize
+Install pvc cross pieces ( ) 
+\end_layout
+
+\begin_layout Itemize
+Install cross piece spars and affix at ends 
+\end_layout
+
+\begin_layout Itemize
+Install hub access platform at appropriate location 
+\end_layout
+
+\begin_layout Itemize
+Install all wire cloth panel A pieces 
+\end_layout
+
+\begin_layout Itemize
+Install all but access section of panel B pieces (with furring strips on outer), sandwiching A-B-cross 
+\end_layout
+
+\begin_layout Itemize
+Install all but access section of panel C pieces (with furring strips on outer), sandwiching B-C-furring 
+\end_layout
+
+\begin_layout Itemize
+Install all panel D pieces, sandwiching C-D-furring 
+\end_layout
+
+\begin_layout Itemize
+Install all panel E pieces 
+\end_layout
+
+\begin_layout Itemize
+install door pieces 
+\end_layout
+
+\begin_layout Standard
+ 
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "YOUR BIBLIOGRAPHY HERE"
+options "plainnat"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_body
+\end_document
